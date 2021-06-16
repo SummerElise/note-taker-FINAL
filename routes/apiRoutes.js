@@ -10,6 +10,7 @@ module.exports = (app) => {
     //api post requests
     app.post('/api/notes', (req, res) => {
         notesData.push(req.body);
+        req.body.id = uuidv4();
         res.json(true);
     });
 };
